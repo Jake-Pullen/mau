@@ -1,0 +1,6 @@
+[
+    {"suit": "Hearts", "command": "Nah"},
+    {"suit":"Spades", "command":"of Spades"},
+    {"value": 8, "command": "bang"}, 
+    {"value":11, "command": "punch"}
+]
