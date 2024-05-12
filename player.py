@@ -20,13 +20,13 @@ class player:
     def discard(self):
         return self.hand.pop()
 
-    def command(self, suit, value, card_count):
+    def command(self, suit, value):
         rules = json.load(open('rules.json'))
         commands = []
         #chance to return the wrong command
         if random.random() < error_chance:
             commands.append('wrong command')
-        print(f'generating command for {card_count} cards, {suit} and {value}')
+        print(f'generating command for {len(self.hand)} cards, {suit} and {value}')
         for rule in rules:
             if 'suit' in rule and rule['suit'] == suit:
                 commands.append(rule['command'])
