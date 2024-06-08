@@ -25,11 +25,11 @@ class RuleEngine:
                 print(f'Added rule: {rule_json}')
     
     def check_rule(self, card, hand):
-        commands = []
+        commands = set()
         for game_rule in self.rules:
             if (game_rule.suit is not None and game_rule.suit == card.suit) or \
                (game_rule.value is not None and game_rule.value == card.value) or \
                (game_rule.card_count != 99 and game_rule.card_count == len(hand)):
-                commands.append(game_rule.command)
-        return ' and '.join(commands) if commands else ''
+                commands.add(game_rule.command)
+        return commands
         

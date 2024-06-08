@@ -1,8 +1,8 @@
 [
-    {"suit": "Hearts", "command": "Nah"},
-    {"suit": "Spades", "command":"Pass me the shovel"},
-    {"value": 1, "command": "Klondike"},
-    {"value": 7, "command": "Good Morning"},
+    {"suit": "Hearts", "command": "nah"},
+    {"suit": "Spades", "command":"pass me the shovel"},
+    {"value": 1, "command": "klondike"},
+    {"value": 7, "command": "good morning"},
     {"value": 8, "command": "bang"}, 
     {"value": 11, "command": "punch"},
     {"value": 13, "command": "god save the king"},

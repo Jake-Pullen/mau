@@ -42,7 +42,8 @@ class BotPlayer(player):
             if 'card_count' in rule and rule['card_count'] == len(self.hand):
                 commands.append(rule['command'])
         #print(f'Commands: {commands}')
-        return ' and '.join(commands) if commands else None
+        return ' and '.join(commands) if commands else ''
+    
     def play(self, deck):
         for card in self.hand:
             if card.suit == deck.discard_pile[-1].suit or card.value == deck.discard_pile[-1].value:
@@ -50,8 +51,8 @@ class BotPlayer(player):
                 deck.discard_pile.append(player_card)
                 print(f'{self.name} played {player_card}')
                 commands = self.command(player_card)
-                if commands is not None:
-                   print(f'{self.name} announced: {commands}')
+                #if commands is not None:
+                    #print(f'{self.name} announced: {commands}')
                 return True, commands
         else:
             print(f'{self.name} cannot play')
@@ -67,10 +68,10 @@ class HumanPlayer(player):
         print(f'Your hand:')
         for i, card in enumerate(self.hand):
             print(f'{i}: {card}')
-        card_index = input('Enter the index of the card you want to play(or type N to pass your go): ')
-        if card_index == 'N' or card_index == 'n':
+        card_index = input('Enter the index of the card you want to play(or type N to pass your go): ').lower()
+        if card_index == 'n':
             return False, None
         card = self.hand.pop(int(card_index))
         deck.discard_pile.append(card)
-        command = input('Enter your command: ')
+        command = input('Enter your command: ').lower()
         return True, command
