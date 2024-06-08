@@ -20,7 +20,7 @@ class player:
     def discard(self):
         return self.hand.pop()
 
-    def command(self, suit, value):
+    def command(self, suit, value, card_count):
         rules = json.load(open('rules.json'))
         commands = []
         #chance to return the wrong command
