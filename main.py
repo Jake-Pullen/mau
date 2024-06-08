@@ -1,8 +1,7 @@
 
 from deck import deck
-#from card import card
 from player import BotPlayer, HumanPlayer
-from rules import Rule, RuleEngine
+from rules import RuleEngine
 
 import time 
 
@@ -11,25 +10,25 @@ deck.shuffle()
 #deck.show()
 deck.first_card()
 
-player_count = int(input('How many players do you want to play with? '))
 players = []
-for i in range(player_count):
-    player_name = input(f'Enter the name of player {i+1}: ')
-    players.append(HumanPlayer(player_name))
-    print(f'player {player_name} has been added')
+player_count = int(input('How many human players? '))
+if player_count > 0:
+    for i in range(player_count):
+        player_name = input(f'Enter the name of player {i+1}: ')
+        players.append(HumanPlayer(player_name))
+        print(f'player {player_name} has been added')
 
+difficulty = input('What difficulty do you want the bots to be? (easy, medium, hard) ')
+if difficulty not in ['easy', 'medium', 'hard']:
+    difficulty = 'medium'
 bot_count = int(input('How many bots do you want to play against? '))
 bots = []
 for i in range(bot_count):
     bots.append(f'bot{i+1}')
 
-players = []
-# In your main game loop
-players = [HumanPlayer('Jake')]  # Add other players
-
 # Create player objects
 for person in bots:
-    game_player = BotPlayer(person)
+    game_player = BotPlayer(person, difficulty)
     players.append(game_player)
 
 # Now you can use your player objects

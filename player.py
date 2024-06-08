@@ -2,7 +2,6 @@ import json
 import random
 
 
-error_chance = 0.3
 
 class player:
     def __init__(self, name):
@@ -24,14 +23,21 @@ class player:
         return len(self.hand)
 
 class BotPlayer(player):
-    def __init__(self, name):
+    def __init__(self, name, difficulty='medium'):
         super().__init__(name)
+        self.difficulty = difficulty 
+        if self.difficulty == 'easy':
+            self.error_chance = 0.4
+        elif self.difficulty == 'hard':
+            self.error_chance = 0.2
+        else:
+            self.error_chance = 0.3
 
     def command(self, card):
         rules = json.load(open('rules.json'))
         commands = []
         #chance to return the wrong command
-        if random.random() < error_chance:
+        if random.random() < self.error_chance:
             commands.append('wrong command')
         #print(f'generating command for {len(self.hand)} cards, {card.suit} and {card.value}')
         for rule in rules:
