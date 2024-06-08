@@ -11,7 +11,7 @@ class deck:
     def build(self):
         for suit in ["Spades", "Hearts", "Diamonds", "Clubs"]:
             for value in range(1, 14):
-                self.cards.append( card(value, suit) )
+                self.cards.append( card(suit=suit, value=value) )
 
     def show(self):
         for card in self.cards:

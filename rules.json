@@ -1,12 +1,12 @@
 [
-    {"suit": "Hearts", "command": "Nah "},
-    {"suit": "Spades", "command":"of Spades "},
-    {"value": 1, "command": "Klondike "},
-    {"value": 7, "command": "Good Morning "},
-    {"value": 8, "command": "bang "}, 
-    {"value": 11, "command": "punch "},
-    {"value": 13, "command": "god save the king "},
-    {"card_count": 2, "command": "swish "},
-    {"card_count": 1, "command": "flick "},
-    {"card_count": 0, "command": "mau "}
+    {"suit": "Hearts", "command": "Nah"},
+    {"suit": "Spades", "command":"Pass me the shovel"},
+    {"value": 1, "command": "Klondike"},
+    {"value": 7, "command": "Good Morning"},
+    {"value": 8, "command": "bang"}, 
+    {"value": 11, "command": "punch"},
+    {"value": 13, "command": "god save the king"},
+    {"card_count": 2, "command": "swish"},
+    {"card_count": 1, "command": "flick"},
+    {"card_count": 0, "command": "mau"}
 ]

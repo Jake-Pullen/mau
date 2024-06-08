@@ -31,5 +31,5 @@ class RuleEngine:
                (game_rule.value is not None and game_rule.value == card.value) or \
                (game_rule.card_count != 99 and game_rule.card_count == len(hand)):
                 commands.append(game_rule.command)
-        return ' and '.join(commands) if commands else None
+        return ' and '.join(commands) if commands else ''
         

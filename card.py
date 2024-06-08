@@ -4,5 +4,5 @@ class card:
         self.value = value
 
     def __str__(self):
-        return f"{self.suit} of {self.value}"
+        return f"{self.value} of {self.suit}"
     
