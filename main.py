@@ -66,7 +66,8 @@ for i in range(50):
             expected_command = ' and '.join(command)
             print(f'expected command: {expected_command}')
             time.sleep(1)
-            given_command_set = set(given_command.split(' and '))
+            #given_command_set = set(given_command.split(' and '))
+            given_command_set = set() if given_command == '' else set(given_command.split(' and '))
             if given_command_set != command:
                 print(f'{game_player.name} made the wrong announcement')
                 #need to put the card back in the hand
